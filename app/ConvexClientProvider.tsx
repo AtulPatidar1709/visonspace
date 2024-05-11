@@ -1,7 +1,5 @@
 'use client'
 
-import useSWR from "swr";
-
 import { ClerkProvider, useAuth } from "@clerk/nextjs"
 
 import { ConvexProviderWithClerk } from "convex/react-clerk"
@@ -27,15 +25,17 @@ export const ConvexClientProvider = ({
     children,
 }: ConvexClientProviderProps) => {
     return (
-        <ClerkProvider publishableKey={publishableKey}>
-            <ConvexProviderWithClerk useAuth={useAuth} client={convex}>
-                <Authenticated>
+        <>
+            <ClerkProvider publishableKey={publishableKey}>
+                <ConvexProviderWithClerk useAuth={useAuth} client={convex}>
+                    {/* <Authenticated> */}
                     {children}
-                </Authenticated>
+                    {/* </Authenticated>
                 <AuthLoading>
-                    <Loading />
-                </AuthLoading>
-            </ConvexProviderWithClerk>
-        </ClerkProvider>
+                <Loading />
+            </AuthLoading> */}
+                </ConvexProviderWithClerk>
+            </ClerkProvider>
+        </>
     )
 }
