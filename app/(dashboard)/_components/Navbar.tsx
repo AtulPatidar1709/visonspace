@@ -1,14 +1,15 @@
 "use client"
 
 import { UserButton } from "@clerk/nextjs"
+import { SearchInput } from "./search-input"
 
 UserButton
 
 export const Navbar = () => {
     return (
-        <div className='flex items-center gap-x-4 p-5 bg-green-500'>
+        <div className='flex items-center gap-x-4 p-5'>
             <div className="hidden lg:flex lg:flex-1">
-                {/* Todo:Add Search */}
+                <SearchInput />
             </div>
             <UserButton />
         </div>
