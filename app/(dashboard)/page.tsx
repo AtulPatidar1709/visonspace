@@ -1,13 +1,31 @@
-import { UserButton } from "@clerk/nextjs";
+"use client"
 
-const DashboardPage = () => {
+import { BoardList } from "./_components/board-list";
+import { EmptyOrg } from "./_components/empty-org";
+import { useOrganization } from "@clerk/nextjs";
+
+interface DashboardPageProps {
+    searchParams: {
+        search?: string;
+        favorites?: string;
+    }
+}
+
+const DashboardPage = ({ searchParams }: DashboardPageProps) => {
+
+    const { organization } = useOrganization();
+
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <h1>
-                Protected Route
-            </h1>
-            <UserButton />
-        </main>
+        <div className="flex-1 h-[calc(100% - 80px)] p-6">
+            {!organization ? (
+                <EmptyOrg />
+            ) : (
+                <BoardList
+                    orgId={organization.id}
+                    query={searchParams}
+                />
+            )}
+        </div>
     );
 }
 

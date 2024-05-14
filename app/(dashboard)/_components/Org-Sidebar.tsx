@@ -6,7 +6,7 @@ import { Poppins } from "next/font/google";
 
 import Logo from "@/public/logo.svg";
 import { cn } from "@/lib/utils";
-import { OrganizationSwitcher } from "@clerk/clerk-react";
+import { OrganizationSwitcher } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { LayoutDashboard, Star } from "lucide-react";
 
