@@ -79,3 +79,80 @@ export const update = mutation({
         return board;
     }
 })
+
+export const favorite = mutation({
+    args: { id: v.id("boards"), orgId: v.string() },
+    handler: async (ctx, args) => {
+        const identity = await ctx.auth.getUserIdentity();
+
+        if (!identity) {
+            throw new Error("Unauthorized");
+        }
+
+        const board = await ctx.db.get(args.id);
+
+        if (!board) {
+            throw new Error("Board not found");
+        }
+
+        const userId = identity.subject;
+
+        const exsistingFavorites = await ctx.db.
+            query("userFavorites")
+            .withIndex("by_user_board_org", (q) =>
+                q
+                    .eq("userId", userId)
+                    .eq("boardId", board._id)
+                    .eq("orgId", args.orgId)
+            )
+            .unique();
+
+        if (exsistingFavorites) {
+            throw new Error("Board Already Favorited");
+        }
+
+        await ctx.db.insert("userFavorites", {
+            userId,
+            boardId: board._id,
+            orgId: args.orgId,
+        })
+        return board;
+    }
+})
+
+export const unfavorite = mutation({
+    args: { id: v.id("boards") },
+    handler: async (ctx, args) => {
+        const identity = await ctx.auth.getUserIdentity();
+
+        if (!identity) {
+            throw new Error("Unauthorized");
+        }
+
+        const board = await ctx.db.get(args.id);
+
+        if (!board) {
+            throw new Error("Board not found");
+        }
+
+        const userId = identity.subject;
+
+        const exsistingFavorites = await ctx.db.
+            query("userFavorites")
+            .withIndex("by_user_board", (q) =>
+                q
+                    .eq("userId", userId)
+                    .eq("boardId", board._id)
+
+                // todo: Check if id is needed 
+            )
+            .unique();
+
+        if (!exsistingFavorites) {
+            throw new Error("Favorited Board not found");
+        }
+
+        await ctx.db.delete(exsistingFavorites._id);
+        return board;
+    }
+})
