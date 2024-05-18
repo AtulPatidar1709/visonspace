@@ -1,4 +1,3 @@
-import { Skeleton } from "@/components/ui/skeleton"
 
 export const Participants = () => {
     return (
@@ -8,7 +7,7 @@ export const Participants = () => {
     )
 }
 
-Participants.Skeleton = function ParticipantsSkeleton() {
+export const ParticipantsSkeleton = () => {
     return (
         <div className="absolute top-2 left-2 rounded-md px-1.5 h-12 flex items-center shadow-md w-[100px]" />
     )
