@@ -3,7 +3,7 @@ import {
     Avatar,
     AvatarFallback,
     AvatarImage,
-} from "@radix-ui/react-avatar";
+} from "@/components/ui/avatar";
 
 interface UserAvatarProps {
     src?: string;
