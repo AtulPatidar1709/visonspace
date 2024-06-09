@@ -8,7 +8,8 @@ import {
 // ]);
 
 const isProtectedRoute = createRouteMatcher([
-    '/(.*)',
+    '[[...rest]]/page.tsx'
+    // '/(.*)',
 ]);
 
 export default clerkMiddleware((auth, req) => {
