@@ -2,6 +2,7 @@ import { createClient } from "@liveblocks/client";
 import { createRoomContext, createLiveblocksContext } from "@liveblocks/react";
 
 const client = createClient({
+  throttle: 16,
   authEndpoint: "/api/liveblocks-auth",
   // authEndpoint: "/api/liveblocks-auth",
   // throttle: 100,
@@ -51,7 +52,7 @@ const client = createClient({
 // and that will automatically be kept in sync. Accessible through the
 // `user.presence` property. Must be JSON-serializable.
 type Presence = {
-  // cursor: { x: number, y: number } | null,
+  cursor: { x: number, y: number } | null,
   // ...
 };
 
@@ -69,7 +70,7 @@ type Storage = {
 // will not change during a session, like a user's name or avatar.
 type UserMeta = {
   id?: string;
-  Info?: {
+  info?: {
     name?: string;
     picture?: string;
   }
