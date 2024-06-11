@@ -1,3 +1,4 @@
+
 export type Color = {
     r: number;
     g: number;
@@ -48,7 +49,7 @@ export type PathLayer = {
     value?: string;
 }
 
-export type TexyLayer = {
+export type TextLayer = {
     type: LayerType.Text;
     x: number;
     y: number;
@@ -126,4 +127,6 @@ export enum CanvasMode {
     Inserting,
     Resizing,
     Pencil,
-}
+};
+
+export type Layer = RectangleLayer | EllipseLayer | PathLayer | TextLayer | NoteLayer;
