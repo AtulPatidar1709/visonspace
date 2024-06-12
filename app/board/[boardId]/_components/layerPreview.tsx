@@ -1,6 +1,6 @@
 "use client"
 
-import { memo, useMemo } from "react";
+import { memo } from "react";
 import { useStorage } from "@/liveblocks.config";
 import { LayerType } from "@/types/canvas";
 import { Rectangle } from "./rectangle";
@@ -39,4 +39,4 @@ export const LayerPreview = memo(({
     }
 });
 
-LayerPreview.displayName = "LayerPreview"
+LayerPreview.displayName = "LayerPreview";
