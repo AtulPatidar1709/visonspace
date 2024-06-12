@@ -11,6 +11,7 @@ import { useCanRedo, useCanUndo, useHistory, useMutation, useOthersMapped, useSt
 import { CursorsPresence } from "./cursors-presence";
 import { connectionIdToColor, pointerEvnetToCanvasPoint } from "@/lib/utils";
 import { LayerPreview } from "./layerPreview";
+import { SelectionBox } from "./selectionBox";
 
 const MAX_LAYERS = 100;
 
@@ -193,6 +194,9 @@ export const Canvas = ({ boardId }: CanvasProps) => {
                             selectionColor={layerIdsToColorSelection[layerId]}
                         />
                     ))}
+                    <SelectionBox
+                        onResizeHandlePointerDown={() => { }}
+                    />
                     <CursorsPresence />
                 </g>
             </svg>
