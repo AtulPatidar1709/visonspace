@@ -1,7 +1,7 @@
 "use client"
 
 import { useCallback, useMemo, useState } from "react";
-import { Camera, CanvasMode, CanvasState, Color, LayerType, Point } from "@/types/canvas";
+import { Camera, CanvasMode, CanvasState, Color, LayerType, Point, Side, XYWH } from "@/types/canvas";
 import { LiveObject } from "@liveblocks/client";
 import { nanoid } from "nanoid";
 import { Info } from "./info";
@@ -67,7 +67,20 @@ export const Canvas = ({ boardId }: CanvasProps) => {
 
         setMyPresence({ selection: [layerId] }, { addToHistory: true });
         setCanvasState({ mode: CanvasMode.None });
-    }, [lastUsedColor])
+    }, [lastUsedColor]);
+
+    const onResizeHandlePointerDown = useCallback((
+        corner: Side,
+        initialBounds: XYWH,
+
+    ) => {
+        history.pause();
+        setCanvasState({
+            mode: CanvasMode.Resizing,
+            initialBounds,
+            corner
+        });
+    }, [history]);
 
     const onWheel = useCallback((e: React.WheelEvent) => {
         setCamera((camera) => ({
