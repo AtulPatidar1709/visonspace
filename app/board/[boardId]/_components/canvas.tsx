@@ -9,7 +9,7 @@ import { Participants } from "./participants";
 import { Toolbar } from "./toolbar";
 import { useCanRedo, useCanUndo, useHistory, useMutation, useOthersMapped, useStorage } from "@/liveblocks.config";
 import { CursorsPresence } from "./cursors-presence";
-import { connectionIdToColor, pointerEvnetToCanvasPoint } from "@/lib/utils";
+import { connectionIdToColor, pointerEvnetToCanvasPoint, resizeBounds } from "@/lib/utils";
 import { LayerPreview } from "./layerPreview";
 import { SelectionBox } from "./selectionBox";
 
@@ -69,6 +69,28 @@ export const Canvas = ({ boardId }: CanvasProps) => {
         setCanvasState({ mode: CanvasMode.None });
     }, [lastUsedColor]);
 
+    const resizeSelectedLayer = useMutation((
+        { storage, self },
+        point: Point,
+    ) => {
+        if (canvasState.mode !== CanvasMode.Resizing) {
+            return;
+        }
+
+        const bounds = resizeBounds(
+            canvasState.initialBounds,
+            canvasState.corner,
+            point
+        );
+
+        const liveLayers = storage.get("layers");
+        const layer = liveLayers.get(self.presence.selection[0]);
+
+        if (layer) {
+            layer.update(bounds);
+        }
+    }, [canvasState])
+
     const onResizeHandlePointerDown = useCallback((
         corner: Side,
         initialBounds: XYWH,
@@ -97,8 +119,12 @@ export const Canvas = ({ boardId }: CanvasProps) => {
 
         const current = pointerEvnetToCanvasPoint(e, camera);
 
+        if (canvasState.mode === CanvasMode.Resizing) {
+            resizeSelectedLayer(current)
+        }
+
         setMyPresence({ cursor: current });
-    }, []);
+    }, [canvasState, resizeSelectedLayer, camera]);
 
     const onPointerLeave = useMutation(({ setMyPresence }) => {
         setMyPresence({ cursor: null });
