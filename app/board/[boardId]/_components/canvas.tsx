@@ -234,7 +234,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
                         />
                     ))}
                     <SelectionBox
-                        onResizeHandlePointerDown={() => { }}
+                        onResizeHandlePointerDown={onResizeHandlePointerDown}
                     />
                     <CursorsPresence />
                 </g>

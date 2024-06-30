@@ -4,6 +4,7 @@ import "./globals.css";
 import ConvexClientProvider from "../providers/ConvexClientProvider";
 import { Toaster } from "@/components/ui/sonner";
 import { ModalProvider } from "@/providers/modal-provider";
+
 const inter = Inter({ subsets: ["latin"], preload: true });
 
 export const metadata: Metadata = ({

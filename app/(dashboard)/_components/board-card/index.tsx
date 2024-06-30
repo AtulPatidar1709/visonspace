@@ -66,14 +66,17 @@ export const BoardCard = ({
     }
 
     return (
-        <Link href={`/board/${id}`}>
+        <Link prefetch={false} href={`/board/${id}`}>
             <div className="group aspect-[100/127] border rounded-lg flex flex-col justify-between overflow-hidden">
                 <div className="relative flex-1 bg-amber-50">
                     <Image
                         src={imageUrl}
                         alt={title}
+                        height="0"
+                        width="0"
+                        // style={{ width: '120px', height: "auto" }}
                         fill
-                        className="object-fit"
+                        className="object-fit w-full h-auto"
                     />
                     <Overlay />
                     <Actions
