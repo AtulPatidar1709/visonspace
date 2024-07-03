@@ -19,6 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head className={inter.className}>
+      </head>
       <body className={inter.className}>
         <ConvexClientProvider>
           <Toaster />

@@ -72,11 +72,9 @@ export const BoardCard = ({
                     <Image
                         src={imageUrl}
                         alt={title}
-                        height="0"
-                        width="0"
-                        // style={{ width: '120px', height: "auto" }}
-                        fill
-                        className="object-fit w-full h-auto"
+                        height={120}
+                        width={120}
+                        className="object-fit"
                     />
                     <Overlay />
                     <Actions
