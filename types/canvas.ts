@@ -100,7 +100,7 @@ export type CanvasState =
 
     | {
         mode: CanvasMode.Translating,
-        currnet: Point;
+        current: Point;
     }
     | {
         mode: CanvasMode.Pressing,

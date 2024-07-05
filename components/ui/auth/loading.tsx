@@ -11,9 +11,6 @@ export const Loading = () => {
                 alt="Logo"
                 width={120}
                 height={120}
-                style={{ width: "auto" }} // Add this style
-                // placeholder="blur"
-                // blurDataURL={logo}
                 className="animate-pulse duration-700"
             />
         </div>
