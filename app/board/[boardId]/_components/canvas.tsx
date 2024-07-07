@@ -12,7 +12,7 @@ import { CursorsPresence } from "./cursors-presence";
 import { connectionIdToColor, pointerEvnetToCanvasPoint, resizeBounds } from "@/lib/utils";
 import { LayerPreview } from "./layerPreview";
 import { SelectionBox } from "./selectionBox";
-import { set } from "date-fns";
+import { Selectiontools } from "./selectiontools";
 
 const MAX_LAYERS = 100;
 
@@ -279,6 +279,10 @@ export const Canvas = ({ boardId }: CanvasProps) => {
                 canUndo={canUndo}
                 undo={history.undo}
                 redo={history.redo}
+            />
+            <Selectiontools
+                camera={camera}
+                setLastUsedColor={setLastUsedColor}
             />
             <svg
                 className="h-[100vh] w-[100vh]"
