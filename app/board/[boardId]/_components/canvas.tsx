@@ -285,7 +285,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
                 setLastUsedColor={setLastUsedColor}
             />
             <svg
-                className="h-[100vh] w-[100vh]"
+                className="h-full w-full"
                 onWheel={onWheel}
                 onPointerMove={onPointerMove}
                 onPointerLeave={onPointerLeave}
