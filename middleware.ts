@@ -8,7 +8,7 @@ import {
 // ]);
 
 const isProtectedRoute = createRouteMatcher([
-    '[[...rest]]/page.tsx',
+    // '//[[...rest]]/page.tsx',
     '/(.*)',
 ]);
 
