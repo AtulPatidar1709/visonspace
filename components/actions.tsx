@@ -91,6 +91,6 @@ export const Actions = ({
                     </ConfirmModal>
                 </DropdownMenuContent>
             </DropdownMenu>
-        </div>
+        </div >
     )
 }

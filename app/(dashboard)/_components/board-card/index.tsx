@@ -68,7 +68,7 @@ export const BoardCard = ({
     return (
         <Link prefetch={false} href={`/board/${id}`}>
             <div className="group aspect-[100/127] border rounded-lg flex flex-col justify-between overflow-hidden">
-                <div className="relative flex-1 bg-amber-50">
+                <div className="relative flex-1  bg-amber-50">
                     <Image
                         src={imageUrl}
                         alt={title}
@@ -84,7 +84,7 @@ export const BoardCard = ({
                     >
                         <button className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity px-3 py-2 outline-none">
                             <MoreHorizontal
-                                className="text-white opacity-75 hover:opacity-100 transition-opacity" />
+                                className="text-black opacity-75 hover:opacity-100 transition-opacity" />
                         </button>
                     </Actions>
                 </div>
