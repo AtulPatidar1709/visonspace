@@ -41,4 +41,15 @@
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/vision-space.git
+
+2. **Clone the repository**:
+   ```bash
    cd vision-space
+
+3. **install all dependency**:
+   ```bash
+   npm install
+
+3. **run application**:
+   ```bash
+   npm run dev
