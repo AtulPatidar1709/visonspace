@@ -7,5 +7,5 @@ export const useDisableScrollBounce = () => {
         return () => {
             document.body.classList.remove("overflow-hidden", "overscroll-none")
         }
-    }, [])
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
 }

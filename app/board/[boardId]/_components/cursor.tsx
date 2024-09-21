@@ -1,19 +1,15 @@
-"use client"
+"use client";
 
 import { memo } from "react";
 import { MousePointer2 } from "lucide-react";
-
 import { useOther } from "@/liveblocks.config";
 import { connectionIdToColor } from "@/lib/utils";
 
-interface cursorProps {
+interface CursorProps {
     connectionId: number;
 }
 
-export const Cursor = memo(({
-    connectionId
-}: cursorProps) => {
-
+export const Cursor = memo(({ connectionId }: CursorProps) => {
     const info = useOther(connectionId, (user) => user?.info);
     const cursor = useOther(connectionId, (user) => user?.presence.cursor);
     const name = info?.name || "Teammate";
@@ -28,7 +24,7 @@ export const Cursor = memo(({
         <p>
             <foreignObject
                 style={{
-                    transform: `translateX(${x}px) translateY(${y}px)`
+                    transform: `translateX(${x}px) translateY(${y}px)`,
                 }}
                 height={50}
                 width={name.length * 10 + 24}
@@ -49,5 +45,8 @@ export const Cursor = memo(({
                 </div>
             </foreignObject>
         </p>
-    )
-})
+    );
+});
+
+// Add displayName for better debugging
+Cursor.displayName = "Cursor";
