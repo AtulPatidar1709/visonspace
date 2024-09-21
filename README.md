@@ -20,10 +20,6 @@
   - Integrated Clerk for user authentication, providing a secure and reliable login system.
   - Supports various authentication methods, including email/password and social logins.
 
-- **Custom Booking Management**:
-  - Implemented a custom library to manage bookings efficiently.
-  - Ensures that all booking-related operations are handled smoothly and securely.
-
 - **MongoDB for Data Storage**:
   - Utilized MongoDB to store and retrieve data efficiently.
   - Provides a flexible and scalable database solution.
@@ -33,7 +29,7 @@
 - **Next.js**: A React framework for building server-rendered applications.
 - **JavaScript**: The programming language used for both front-end and back-end logic.
 - **Clerk**: Authentication service for managing user login and registration.
-- **Custom Booking Library**: A custom-built solution for handling bookings within the application.
+- **Custom Board Management**: A custom-built solution for handling Board within the application.
 - **MongoDB**: A NoSQL database for storing user data, board information, and booking details.
 
 ## Installation and Setup
