@@ -53,3 +53,8 @@
 3. **run application**:
    ```bash
    npm run dev
+
+# Want to Explore:
+
+- **Login**: patidaratul1709@gmail.com
+- **password**: Test@1709
