@@ -50,6 +50,14 @@
    ```bash
    npm run dev
 
+# Website Screen Shots:   
+
+1. **Dashboard Page**
+   ![Dashboard Page]([https://example.com/homepage.png](https://drive.google.com/file/d/1NwjfJEI1j9BupRWUwObxz4POpjsc9T0k/view?usp=sharing))
+   
+2. **Board Page**
+   ![Board Page]([https://example.com/board-management.png](https://drive.google.com/file/d/1PiyX7l3HyAuHF54KXOaBB68-RpZClrLO/view?usp=sharing))
+
 # Want to Explore:
 
 - **Login**: patidaratul1709@gmail.com
