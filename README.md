@@ -1,64 +1,75 @@
-# Vision-Space
+# 🚀 Vision-Space | Real-Time Collaborative Workspace
 
-**Vision-Space** is an API-based real-time web application designed for live multi-user integration and board management. This project showcases a robust architecture built with modern web technologies, ensuring a seamless and efficient user experience.
+A **Next.js** project enabling live multi-user collaboration and dynamic board management. Built with modern web technologies, it provides a seamless, real-time experience for users.
 
-## Features
+---
 
-- **Real-Time Multi-User Integration**: 
-  - Enables real-time collaboration between users.
-  - Provides instant updates and notifications across multiple users.
+## 📌 Features
 
-- **Board Management**:
-  - Allows users to create, manage, and organize boards.
+- ✨ **Real-Time Multi-User Collaboration**
+  - Collaborate on boards in real-time with instant updates for all participants.
+  - Notifications ensure all users stay informed of changes.
+
+- 🔍 **Board Management**
+  - Create, manage, and organize boards effortlessly.
   - Supports dynamic content updates and easy navigation.
 
-- **Server-Rendered UI with Next.js**:
-  - Next.js is used for server-side rendering, ensuring faster page loads and better SEO.
-  - Enhances performance and provides a smooth user experience.
+- 🌲 **Server-Rendered UI with Next.js**
+  - Utilizes server-side rendering for faster page loads and improved SEO.
+  - Optimized performance for a smooth user experience.
 
-- **Authentication with Clerk**:
-  - Integrated Clerk for user authentication, providing a secure and reliable login system.
-  - Supports various authentication methods, including email/password and social logins.
+- 📉 **Authentication with Clerk**
+  - Secure login system with support for email/password and social logins.
+  - Reliable and scalable authentication service.
 
-- **MongoDB for Data Storage**:
-  - Utilized MongoDB to store and retrieve data efficiently.
-  - Provides a flexible and scalable database solution.
+- 📊 **MongoDB for Data Storage**
+  - Flexible and scalable database to store user and board information.
+  - Optimized for efficient data retrieval and updates.
 
-## Technologies Used
+---
 
-- **Next.js**: A React framework for building server-rendered applications.
-- **JavaScript**: The programming language used for both front-end and back-end logic.
-- **Clerk**: Authentication service for managing user login and registration.
-- **Custom Board Management**: A custom-built solution for handling Board within the application.
-- **MongoDB**: A NoSQL database for storing user data, board information, and booking details.
+## 📸 Screenshots
 
-## Installation and Setup
+![Home Page](https://drive.google.com/uc?id=1NwjfJEI1j9BupRWUwObxz4POpjsc9T0k)
+
+---
+
+![Board Page](https://drive.google.com/uc?id=1PiyX7l3HyAuHF54KXOaBB68-RpZClrLO)
+
+---
+
+## 📚 Technologies Used
+
+- **Next.js** – React framework for server-side rendering and optimized performance  
+- **TypeScript** – Strongly typed JavaScript for reliability  
+- **Tailwind CSS** – Utility-first styling for rapid UI development  
+- **Clerk** – Authentication service for user login and registration  
+- **MongoDB** – NoSQL database for storing users, boards, and related data  
+- **Custom Board Management** – Dynamic React components and API routes for board operations  
+
+---
+
+## ⚡ Installation Steps
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/vision-space.git
-
-2. **Clone the repository**:
+   git clone https://github.com/AtulPatidar1709/visonspace.git
+2. **Navigate to the project directory**:
    ```bash
    cd vision-space
-
-3. **install all dependency**:
+3. **Install dependencies**:
    ```bash
    npm install
-
-3. **run application**:
+4. **Run the application**:
    ```bash
    npm run dev
 
-**Website Screen Shots:**   
+---
 
-1. **Dashboard Page**
-   ([https://visonspace.vercel.app/](https://drive.google.com/file/d/1NwjfJEI1j9BupRWUwObxz4POpjsc9T0k/view?usp=sharing))
-   
-2. **Board Page**
-   ([https://visonspace.vercel.app/board](https://drive.google.com/file/d/1PiyX7l3HyAuHF54KXOaBB68-RpZClrLO/view?usp=sharing))
+## 🔗 Contact
 
-# Want to Explore:
+📧 Email: atulpatidar1709@gmail.com <br/>
+🐦 Twitter: [@atulpatidar](https://x.com/ATUL4CODE) <br/>
+👨‍💻 LinkedIn: [Atul Patidar](https://in.linkedin.com/in/atulpatidar09)
 
-- **Login**: patidaratul1709@gmail.com
-- **password**: Test@1709
+---
